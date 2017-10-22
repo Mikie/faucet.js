@@ -1,42 +1,43 @@
 package com.faucetjs;
 
 import com.faucetjs.commands.Faucet;
+import com.google.common.collect.Maps;
 import lombok.Getter;
-import org.apache.commons.io.FileUtils;
+import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
 import java.io.File;
-import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.WatchKey;
+import java.util.Map;
 import java.util.logging.Level;
 
 public class FaucetJS extends JavaPlugin {
     @Getter
-    private File scriptDirectory = new File(getDataFolder(), getConfig().getString("settings.scripts-folder") == null ? "scripts" : getConfig().getString("settings.scripts-folder"));
+    private File scriptDirectory = new File(getDataFolder(), "scripts");
+    @Getter
+    private ScriptEngine scriptEngine;
 
     @Override
     public void onEnable() {
-        this.getServer().getPluginCommand("faucet").setExecutor(new Faucet());
+        scriptEngine = new ScriptEngineManager().getEngineByName("JavaScript");
 
-        saveConfig();
-
-        try {
-            if (!scriptDirectory.getName().equals(getConfig().getString("settings.scripts-folder"))) {
-                File newDirectory = new File(getDataFolder(), getConfig().getString("settings.scripts-folder"));
-                scriptDirectory.mkdirs();
-                FileUtils.copyDirectory(scriptDirectory, newDirectory);
-                getLogger().log(Level.INFO, "The scripts directory has been renamed to " + newDirectory.getName());
-            }
-
-            if (scriptDirectory.mkdirs()) {
-                getLogger().log(Level.INFO, "Successfully created the \'" + scriptDirectory.getName() + "\' directory!");
-            }
-        } catch(IOException e) {
-            e.printStackTrace();
+        if (scriptDirectory.mkdirs()) {
+            getLogger().log(Level.INFO, "Successfully created the \'" + scriptDirectory.getName() + "\' directory!");
         }
+        getCommand("faucet").setExecutor(new Faucet());
     }
 
     @Override
     public void onDisable() {
+        HandlerList.unregisterAll(this);
+        getServer().getScheduler().cancelTasks(this);
         saveConfig();
+
+        if(scriptEngine != null) {
+            scriptEngine = null;
+        }
     }
 }
