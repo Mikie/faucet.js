@@ -1,4 +1,4 @@
-package org.js.faucet.commands.wapper;
+package org.js.faucet.commands.wrapper;
 
 import com.google.common.util.concurrent.ListeningExecutorService;
 import com.google.common.util.concurrent.MoreExecutors;

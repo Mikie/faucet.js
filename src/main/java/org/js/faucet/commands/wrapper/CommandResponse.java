@@ -1,4 +1,4 @@
-package org.js.faucet.commands.wapper;
+package org.js.faucet.commands.wrapper;
 
 import com.google.common.collect.Maps;
 import lombok.Getter;

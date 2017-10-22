@@ -4,7 +4,7 @@ import org.js.faucet.commands.Faucet;
 import lombok.Getter;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.js.faucet.commands.wapper.CommandManager;
+import org.js.faucet.commands.wrapper.CommandManager;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
