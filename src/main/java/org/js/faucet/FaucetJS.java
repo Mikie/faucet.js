@@ -13,10 +13,13 @@ import java.util.logging.Level;
 
 public class FaucetJS extends JavaPlugin {
     @Getter
-    private File scriptDirectory = new File(getDataFolder(), "scripts");
+    private File    scriptDirectory = new File(getDataFolder(), "scripts");
+
     @Getter
     private ScriptEngine scriptEngine;
+
     private static FaucetJS instance;
+
     @Getter
     private CommandManager commandManager;
 
