@@ -1,0 +1,4 @@
+name: ${project.name}
+main: com.faucetjs.FaucetJS
+version: ${project.version}
+authors: [Aerh, LamboCreeper, TheMasteredPanda]

@@ -7,6 +7,39 @@
     <groupId>com.faucetjs</groupId>
     <artifactId>faucetjs</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>FaucetJS</name>
+
+    <developers>
+        <developer>
+            <id>aerh</id>
+            <name>Aerh</name>
+            <organization>FaucetJS</organization>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>lambocreeper</id>
+            <name>LamboCreeper</name>
+            <organization>FaucetJS</organization>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>themasteredpanda</id>
+            <name>TheMasteredPanda</name>
+            <organization>FaucetJS</organization>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <issueManagement>
+        <url>https://github.com/FaucetJS/faucet.js/issues</url>
+        <system>GitHub Issues</system>
+    </issueManagement>
 
     <build>
         <resources>
