@@ -23,7 +23,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
- * Wrapper for the bungee Command class. Handles most of the conditions for the benefit
+ * Wrapper for the bukkit Command class. Handles most of the conditions for the benefit
  * that the developer will not have to write them for every parent and child command.
  * it also has the added benefit of handling asynchronous execution of the command
  * definition. Which is useful if the command body can be executed on another thread.
@@ -275,7 +275,7 @@ public abstract class FaucetCommand extends Command {
     }
 
     /**
-     * Body of BungeeCord command.
+     * Body of Faucet command.
      * @param sender - sender.
      * @param args - arguments.
      */
