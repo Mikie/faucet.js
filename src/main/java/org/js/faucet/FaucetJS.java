@@ -1,7 +1,6 @@
-package com.faucetjs;
+package org.js.faucet;
 
-import com.faucetjs.commands.Faucet;
-import com.google.common.collect.Maps;
+import org.js.faucet.commands.Faucet;
 import lombok.Getter;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -9,9 +8,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.WatchKey;
-import java.util.Map;
 import java.util.logging.Level;
 
 public class FaucetJS extends JavaPlugin {

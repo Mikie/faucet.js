@@ -1,4 +1,4 @@
-package com.faucetjs.utils;
+package org.js.faucet.utils;
 
 import org.bukkit.Bukkit;
 
