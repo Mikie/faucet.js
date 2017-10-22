@@ -6,7 +6,7 @@ public class FaucetJS extends JavaPlugin {
 
     @Override
     public void onEnable() {
-
+        Bukkit.getLogger().log('I\'m just here to say eyo lmao.');
     }
 
     @Override
