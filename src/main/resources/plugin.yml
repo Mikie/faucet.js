@@ -2,3 +2,7 @@ name: ${project.name}
 main: com.faucetjs.FaucetJS
 version: ${project.version}
 authors: [Aerh, LamboCreeper, TheMasteredPanda]
+commands:
+  faucet:
+    description: The main command for faucet.js
+    usage: /faucet
