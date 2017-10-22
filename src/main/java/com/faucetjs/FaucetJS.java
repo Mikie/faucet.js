@@ -15,9 +15,12 @@ public class FaucetJS extends JavaPlugin {
         //saveConfig();
         File directory = new File(getDataFolder(), scriptDirectory);
 
-        if (directory.mkdirs()) {
+        if (directory.mkdirs())
             getLogger().log(Level.INFO, "Successfully created the \'" + directory.getName() + "\' directory!");
-        }
+
+
+        if(!directory.getName().equalsIgnoreCase(scriptDirectory))
+            directory.renameTo(new File(scriptDirectory));
     }
 
     @Override
