@@ -1,8 +1,8 @@
-package com.faucetjs.utils;
+package org.js.faucet.utils;
 
 
-import com.faucetjs.exception.DeveloperException;
-import com.faucetjs.exception.UtilException;
+import org.js.faucet.exception.DeveloperException;
+import org.js.faucet.exception.UtilException;
 
 /**
  * For converting a string into a number.

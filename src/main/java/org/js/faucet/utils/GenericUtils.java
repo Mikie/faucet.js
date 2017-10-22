@@ -1,6 +1,6 @@
-package com.faucetjs.utils;
+package org.js.faucet.utils;
 
-import com.faucetjs.exception.UtilException;
+import org.js.faucet.exception.UtilException;
 
 public final class GenericUtils
 {
@@ -25,7 +25,7 @@ public final class GenericUtils
         return false;
     }
 
-    public static <T> boolean caseable(Object o, Class<T> clazz) {
+    public static <T> boolean castable(Object o, Class<T> clazz) {
         try {
             T t = (T) o;
             return true;

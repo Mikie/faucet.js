@@ -1,4 +1,4 @@
-package com.faucetjs.exception;
+package org.js.faucet.exception;
 
 public class UtilException extends RuntimeException {
     public UtilException() {
