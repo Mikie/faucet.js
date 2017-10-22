@@ -12,6 +12,7 @@ public class Faucet implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
             Player player = (Player)sender;
+
             if (args.length == 0) {
                 TextComponent faucetHelpTitle = new TextComponent("§c§lFaucet.js Help\n");
                 TextComponent faucetHelpReload = new TextComponent("§c/faucet reload <script>\n§7> Reload a script or the config.\n");
@@ -25,9 +26,9 @@ public class Faucet implements CommandExecutor {
                 player.spigot().sendMessage(faucetHelpTitle, faucetHelpReload, faucetHelpList, faucetHelpAbout);
             } else if (args[0].equalsIgnoreCase("reload")) {
                 player.sendMessage("Not implemented yet.");
-            } else if (args[0]..equalsIgnoreCase("list")) {
+            } else if (args[0].equalsIgnoreCase("list")) {
                 player.sendMessage("Not implemented yet.");
-            } else if (args[0]..equalsIgnoreCase("about")) {
+            } else if (args[0].equalsIgnoreCase("about")) {
                 player.sendMessage("Not implemented yet.");
             }
         }
