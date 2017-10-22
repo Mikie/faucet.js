@@ -1,7 +1,9 @@
 package org.js.faucet.exception;
 
+/**
+ * @see TryUtils
+ */
 @FunctionalInterface
-public interface TryRunnable
-{
+public interface TryRunnable {
     void run() throws Exception;
 }

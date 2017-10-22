@@ -1,4 +1,4 @@
-package org.js.faucet.commands.wrapper;
+package org.js.faucet.command.wrapper;
 
 import com.google.common.util.concurrent.ListeningExecutorService;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -12,6 +12,11 @@ import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.concurrent.Executors;
 
+/**
+ * To register commands to the command map. This also provides the service for asynchronous execution of command bodies.
+ *
+ * @see FaucetCommand
+ */
 public class CommandManager {
     protected ListeningExecutorService service;
     private SimpleCommandMap commandMap;

@@ -6,6 +6,9 @@ import org.js.faucet.exception.UtilException;
 
 import java.util.List;
 
+/**
+ * CommandSender utilities.
+ */
 public final class Sender {
     public Sender() {
         throw new UtilException();

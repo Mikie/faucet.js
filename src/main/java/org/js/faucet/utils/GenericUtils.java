@@ -2,10 +2,11 @@ package org.js.faucet.utils;
 
 import org.js.faucet.exception.UtilException;
 
-public final class GenericUtils
-{
-    private GenericUtils()
-    {
+/**
+ * For casting objects to a generic type.
+ */
+public final class GenericUtils {
+    private GenericUtils() {
         throw new UtilException();
     }
 

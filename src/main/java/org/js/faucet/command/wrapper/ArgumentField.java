@@ -1,9 +1,12 @@
-package org.js.faucet.commands.wrapper;
+package org.js.faucet.command.wrapper;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
+/**
+ * @see ArgumentField
+ */
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Getter

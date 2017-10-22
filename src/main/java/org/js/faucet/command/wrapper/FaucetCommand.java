@@ -1,4 +1,4 @@
-package org.js.faucet.commands.wrapper;
+package org.js.faucet.command.wrapper;
 
 import com.google.common.collect.LinkedListMultimap;
 import com.google.common.collect.Lists;
@@ -8,6 +8,7 @@ import lombok.NonNull;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.java.JavaPlugin;
 import org.js.faucet.FaucetJS;
 import org.js.faucet.exception.DeveloperException;
 import org.js.faucet.exception.TryUtils;
@@ -49,7 +50,12 @@ import java.util.stream.Collectors;
  * as required argument fields, fields that are required in order for the command to run.
  *
  */
-public abstract class FaucetCommand extends Command {
+public abstract class FaucetCommand<P extends JavaPlugin> extends Command {
+
+    /**
+     * Plugin instance.
+     */
+    private P instance;
     /**
      * Parent commands essentially does what it says on the tin. These are commands that consider
      * this command to be a child command, and vise versa. A parent command cannot also be a child
@@ -116,6 +122,7 @@ public abstract class FaucetCommand extends Command {
 
     /**
      * Main constructor to this wrapper, contains all the necessary information.
+     * @param instance - instance of the plugin.
      * @param name - the 'main alias' of this command.
      * @param permission - the permission node of this command, if this is set to null the wrapper will consider this
      *                   command to not have a permission.
@@ -124,7 +131,7 @@ public abstract class FaucetCommand extends Command {
      * @param asynchronousState - the asynchronous state of this command, described above.
      * @param aliases - the aliases of this command.
      */
-    public FaucetCommand(@NonNull Locale locale, @NonNull String name, String permission, String description, boolean playerOnlyCommand, @NonNull int asynchronousState, String... aliases) {
+    public FaucetCommand(P instance, @NonNull Locale locale, @NonNull String name, String permission, String description, boolean playerOnlyCommand, @NonNull int asynchronousState, String... aliases) {
         super(name, description, null, Arrays.asList(aliases));
         locale.populate(this.getClass());
 
@@ -136,12 +143,12 @@ public abstract class FaucetCommand extends Command {
         this.state = asynchronousState;
     }
 
-    public FaucetCommand(Locale locale, String name, String description, boolean playerOnlyCommand, int state) {
-        this(locale, name, null, description, playerOnlyCommand, state);
+    public FaucetCommand(P instance, Locale locale, String name, String description, boolean playerOnlyCommand, int state) {
+        this(instance, locale, name, null, description, playerOnlyCommand, state);
     }
 
-    public FaucetCommand(Locale locale, String name, String description, int state) {
-        this(locale, name, null, description, false, state);
+    public FaucetCommand(P instance, Locale locale, String name, String description, int state) {
+        this(instance, locale, name, null, description, false, state);
     }
 
     /**

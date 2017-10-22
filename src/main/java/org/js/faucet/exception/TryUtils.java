@@ -2,6 +2,9 @@ package org.js.faucet.exception;
 
 import lombok.SneakyThrows;
 
+/**
+ * For methods that are to be wrapped in a try/catch statement.
+ */
 public final class TryUtils {
     private TryUtils() {
         throw new UtilException();
