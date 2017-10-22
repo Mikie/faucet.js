@@ -12,6 +12,9 @@ public class FaucetJS extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        Bukkit.getLogger().info("> I'm just here to say eyo lmao.");
+        this.getServer().getPluginCommand("faucet").setExecutor(new Faucet());
+        
         //saveConfig();
         File directory = new File(getDataFolder(), scriptDirectory);
 
