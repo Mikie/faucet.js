@@ -6,13 +6,12 @@ import java.io.File;
 import java.util.logging.Level;
 
 public class FaucetJS extends JavaPlugin {
-    private String scriptDirectory = null;
+    private String scriptDirectory = getConfig().getString("settings.scripts-folder") == null ? "scripts" : getConfig().getString("settings.scripts-folder");
 
     @Override
     public void onEnable() {
         //saveConfig();
-        scriptDirectory = getConfig().getString("settings.scripts-folder");
-        File directory = new File(getDataFolder(), scriptDirectory == null ? "scripts" : scriptDirectory);
+        File directory = new File(getDataFolder(), scriptDirectory);
 
         if (directory.mkdirs()) {
             getLogger().log(Level.INFO, "Successfully created the \'" + directory.getName() + "\' directory!");
