@@ -1,9 +1,6 @@
 package com.faucetjs.commands;
 
-import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.ClickEvent;
-import net.md_5.bungee.api.chat.ComponentBuilder;
-import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.chat.ClickEvent.Action;
 import org.bukkit.command.Command;
@@ -22,13 +19,10 @@ public class Faucet implements CommandExecutor {
                 TextComponent faucetHelpAbout = new TextComponent("§c/faucet about <script>\n§7> Get information about a specific script.");
                 
 		faucetHelpReload.setClickEvent(new ClickEvent(Action.SUGGEST_COMMAND, "/faucet reload "));
-                faucetHelpReload.setHoverEvent(new HoverEvent(net.md_5.bungee.api.chat.HoverEvent.Action.SHOW_TEXT, (new ComponentBuilder("Click for auto complete.")).create()));
-                faucetHelpList.setClickEvent(new ClickEvent(Action.RUN_COMMAND, "/faucet list"));
-                faucetHelpList.setHoverEvent(new HoverEvent(net.md_5.bungee.api.chat.HoverEvent.Action.SHOW_TEXT, (new ComponentBuilder("Click for auto complete.")).create()));
-                faucetHelpAbout.setClickEvent(new ClickEvent(Action.SUGGEST_COMMAND, "/faucet about "));
-                faucetHelpAbout.setHoverEvent(new HoverEvent(net.md_5.bungee.api.chat.HoverEvent.Action.SHOW_TEXT, (new ComponentBuilder("Click for auto complete.")).create()));
+		faucetHelpList.setClickEvent(new ClickEvent(Action.RUN_COMMAND, "/faucet list"));
+		faucetHelpAbout.setClickEvent(new ClickEvent(Action.SUGGEST_COMMAND, "/faucet about "));
                 
-		player.spigot().sendMessage(new BaseComponent[]{faucetHelpTitle, faucetHelpReload, faucetHelpList, faucetHelpAbout});
+		player.spigot().sendMessage(faucetHelpTitle, faucetHelpReload, faucetHelpList, faucetHelpAbout);
             } else if (args[0].toUpperCase().equals("RELOAD")) {
                 player.sendMessage("Not implemented yet.");
             } else if (args[0].toUpperCase().equals("LIST")) {
