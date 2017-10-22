@@ -1,11 +1,13 @@
 package com.faucetjs;
 
+import lombok.Getter;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.util.logging.Level;
 
 public class FaucetJS extends JavaPlugin {
+    @Getter
     private String scriptDirectory = getConfig().getString("settings.scripts-folder") == null ? "scripts" : getConfig().getString("settings.scripts-folder");
 
     @Override
@@ -21,9 +23,5 @@ public class FaucetJS extends JavaPlugin {
     @Override
     public void onDisable() {
         saveConfig();
-    }
-
-    public String getScriptDirectory() {
-        return scriptDirectory;
     }
 }

@@ -1,2 +1,3 @@
 settings:
   scripts-folder: "files"
+  debug: false
