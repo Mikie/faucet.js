@@ -25,9 +25,9 @@ public class Faucet implements CommandExecutor {
                 player.spigot().sendMessage(faucetHelpTitle, faucetHelpReload, faucetHelpList, faucetHelpAbout);
             } else if (args[0].equalsIgnoreCase("reload")) {
                 player.sendMessage("Not implemented yet.");
-            } else if (args[0]..equalsIgnoreCase("list")) {
+            } else if (args[0].equalsIgnoreCase("list")) {
                 player.sendMessage("Not implemented yet.");
-            } else if (args[0]..equalsIgnoreCase("about")) {
+            } else if (args[0].equalsIgnoreCase("about")) {
                 player.sendMessage("Not implemented yet.");
             }
         }
