@@ -23,11 +23,11 @@ public class Faucet implements CommandExecutor {
                 faucetHelpAbout.setClickEvent(new ClickEvent(Action.SUGGEST_COMMAND, "/faucet about "));
                         
                 player.spigot().sendMessage(faucetHelpTitle, faucetHelpReload, faucetHelpList, faucetHelpAbout);
-            } else if (args[0].toUpperCase().equalsIgnoreCase("RELOAD")) {
+            } else if (args[0].equalsIgnoreCase("reload")) {
                 player.sendMessage("Not implemented yet.");
-            } else if (args[0].toUpperCase().equalsIgnoreCase("LIST")) {
+            } else if (args[0]..equalsIgnoreCase("list")) {
                 player.sendMessage("Not implemented yet.");
-            } else if (args[0].toUpperCase().equalsIgnoreCase("ABOUT")) {
+            } else if (args[0]..equalsIgnoreCase("about")) {
                 player.sendMessage("Not implemented yet.");
             }
         }
