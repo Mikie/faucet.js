@@ -1,4 +1,4 @@
-package com.faucetjs.commands;
+package org.js.faucet.commands;
 
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.TextComponent;

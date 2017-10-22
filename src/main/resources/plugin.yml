@@ -1,5 +1,5 @@
 name: ${project.name}
-main: com.faucetjs.FaucetJS
+main: org.js.faucet.FaucetJS
 version: ${project.version}
 authors: [Aerh, LamboCreeper, TheMasteredPanda]
 commands:
