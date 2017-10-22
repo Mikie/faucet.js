@@ -10,6 +10,7 @@ public class FaucetJS extends JavaPlugin {
 
     @Override
     public void onEnable() {
+<<<<<<< HEAD
         //saveConfig();
         scriptDirectory = getConfig().getString("settings.scripts-folder");
         File directory = new File(getDataFolder(), scriptDirectory == null ? "scripts" : scriptDirectory);
@@ -17,6 +18,9 @@ public class FaucetJS extends JavaPlugin {
         if (directory.mkdirs()) {
             getLogger().log(Level.INFO, "Successfully created the \'" + directory.getName() + "\' directory!");
         }
+=======
+        Bukkit.getLogger().log('I\'m just here to say eyo lmao.');
+>>>>>>> 348e65932550aeab5daa7d050cdc49cc834afc2d
     }
 
     @Override
