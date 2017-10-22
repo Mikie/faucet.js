@@ -12,6 +12,7 @@ public class Faucet implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
             Player player = (Player)sender;
+
             if (args.length == 0) {
                 TextComponent faucetHelpTitle = new TextComponent("§c§lFaucet.js Help\n");
                 TextComponent faucetHelpReload = new TextComponent("§c/faucet reload <script>\n§7> Reload a script or the config.\n");
