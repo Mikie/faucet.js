@@ -64,15 +64,15 @@
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
-                    <minimizeJar>true</minimizeJar>
                     <artifactSet>
                         <includes>
-                            <include>org.mcstats.*:**</include>
+                            <include>org.bstats:*</include>
                         </includes>
                     </artifactSet>
                     <relocations>
                         <relocation>
-                            <pattern>org.mcstats</pattern>
+                            <pattern>org.bstats</pattern>
+                            <!-- Replace this with your package! -->
                             <shadedPattern>org.js.faucet.utils</shadedPattern>
                         </relocation>
                     </relocations>

@@ -5,13 +5,8 @@ import org.js.faucet.commands.Faucet;
 import lombok.Getter;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
-<<<<<<< HEAD
 
-import org.js.faucet.utils.FaucetUtils;
-import org.js.faucet.commands.wapper.CommandManager;
-=======
 import org.js.faucet.commands.wrapper.CommandManager;
->>>>>>> da5b845ce14cea7b3cd525d0d570577f08aef6e2
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
@@ -36,15 +31,12 @@ public class FaucetJS extends JavaPlugin {
     @Override
     public void onEnable() {
         Metrics metrics = new Metrics(this);
-        metrics.addCustomChart(new Metrics.SimplePie("server_version", () -> FaucetUtils.getServerVersion()));
-
         scriptEngine = new ScriptEngineManager().getEngineByName("nashorn");
 
         if (scriptDirectory.mkdirs()) {
             getLogger().log(Level.INFO, "Successfully created the \'" + scriptDirectory.getName() + "\' directory!");
         }
         getCommand("faucet").setExecutor(new Faucet());
-        System.out.println(FaucetUtils.getServerVersion());
     }
 
     @Override
