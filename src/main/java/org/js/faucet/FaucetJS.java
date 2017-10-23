@@ -42,8 +42,8 @@ public class FaucetJS extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        this.metrics = new Metrics(this);
-        this.scriptEngine = new ScriptEngineManager().getEngineByName("nashorn");
+        this.metrics = new Metrics(this); // Still need to check if this is working or not. If not I'll find my own way.
+        this.scriptEngine = new ScriptEngineManager().getEngineByName("nashorn"); // Can use 'nashorn' or 'JavaScript'; either work.
 
         if (!scriptDirectory.exists()) {
             scriptDirectory.mkdir();
@@ -64,8 +64,7 @@ public class FaucetJS extends JavaPlugin {
         }
     }
 
-    public void log(Level lvl, String... messages)
-    {
+    public void log(Level lvl, String... messages) {
         Arrays.stream(messages).forEachOrdered(msg -> this.getLogger().log(lvl, msg));
     }
 
