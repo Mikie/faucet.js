@@ -15,6 +15,7 @@ import java.util.Map;
 public class MainCommand extends FaucetCommand<FaucetJS> {
     public MainCommand(FaucetJS instance) {
         super(instance, instance.getLocale(), "faucet", "Parent command for faucet.", true, 0);
+        this.addChildCommands(new ReloadCommand(instance), new ListCommand(instance));
     }
 
     @Override
