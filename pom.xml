@@ -72,7 +72,6 @@
                     <relocations>
                         <relocation>
                             <pattern>org.bstats</pattern>
-                            <!-- Replace this with your package! -->
                             <shadedPattern>org.js.faucet.utils</shadedPattern>
                         </relocation>
                     </relocations>
@@ -134,14 +133,14 @@
             <version>2.5</version>
             <scope>provided</scope>
         </dependency>
-
+         <!--Google Collections-->
         <dependency>
             <groupId>com.google.collections</groupId>
             <artifactId>google-collections</artifactId>
             <version>1.0</version>
             <scope>compile</scope>
         </dependency>
-
+         <!--jsr305-->
         <dependency>
             <groupId>com.google.code.findbugs</groupId>
             <artifactId>jsr305</artifactId>
