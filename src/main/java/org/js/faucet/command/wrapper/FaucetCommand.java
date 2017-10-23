@@ -398,7 +398,8 @@ public abstract class FaucetCommand<P extends JavaPlugin> extends Command {
      * @param sender - the seconder of the command
      * @param parameters - the parameters.
      */
-    public abstract void onFailure(CommandSender sender, Map<String, Object> data, LinkedList<String> parameters);
+    public void onFailure(CommandSender sender, Map<String, Object> data, LinkedList<String> parameters) {
+    }
 
     /**
      * If the commands body returns a successful command response, this part of the command
@@ -406,5 +407,6 @@ public abstract class FaucetCommand<P extends JavaPlugin> extends Command {
      * @param sender - the sender of the command.
      * @param parameters - the parameters.
      */
-    public abstract void onSuccess(CommandSender sender, Map<String, Object> data, LinkedList<String> parameters);
+    public void onSuccess(CommandSender sender, Map<String, Object> data, LinkedList<String> parameters) {
+    }
 }

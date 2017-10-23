@@ -19,16 +19,6 @@ public class MainCommand extends FaucetCommand<FaucetJS> {
 
     @Override
     public CommandResponse execute(CommandSender sender, LinkedList<String> parameters) {
-        return new CommandResponse(CommandResponse.Type.SUCCESS, sender);
-    }
-
-    @Override
-    public void onFailure(CommandSender sender, Map<String, Object> data, LinkedList<String> parameters) {
-    }
-
-    @Override
-    public void onSuccess(CommandSender sender, Map<String, Object> data, LinkedList<String> parameters)
-    {
         if (parameters.size() == 0) {
             TextComponent faucetHelpTitle = new TextComponent("§c§lFaucet.js Help\n");
             TextComponent faucetHelpReload = new TextComponent("§c/faucet reload <script>\n§7> Reload a script or the config.\n");
@@ -41,6 +31,8 @@ public class MainCommand extends FaucetCommand<FaucetJS> {
         } else {
             Sender.send(sender, "What?");
         }
+
+        return new CommandResponse(CommandResponse.Type.SUCCESS, sender);
     }
 
     public class ReloadCommand extends FaucetCommand<FaucetJS> {
@@ -56,10 +48,6 @@ public class MainCommand extends FaucetCommand<FaucetJS> {
         @Override
         public void onFailure(CommandSender sender, Map<String, Object> data, LinkedList<String> parameters) {
             Sender.send(sender, "Command not written yet.");
-        }
-
-        @Override
-        public void onSuccess(CommandSender sender, Map<String, Object> data, LinkedList<String> parameters) {
         }
     }
 
@@ -78,10 +66,6 @@ public class MainCommand extends FaucetCommand<FaucetJS> {
         public void onFailure(CommandSender sender, Map<String, Object> data, LinkedList<String> parameters) {
             Sender.send(sender, "Command not written yet.");
         }
-
-        @Override
-        public void onSuccess(CommandSender sender, Map<String, Object> data, LinkedList<String> parameters) {
-        }
     }
 
     public class AboutCommand extends FaucetCommand<FaucetJS>
@@ -98,10 +82,6 @@ public class MainCommand extends FaucetCommand<FaucetJS> {
         @Override
         public void onFailure(CommandSender sender, Map<String, Object> data, LinkedList<String> parameters) {
             Sender.send(sender, "Command not written yet.");
-        }
-
-        @Override
-        public void onSuccess(CommandSender sender, Map<String, Object> data, LinkedList<String> parameters) {
         }
     }
 }
