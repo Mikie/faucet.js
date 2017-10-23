@@ -46,8 +46,11 @@ public class FaucetJS extends JavaPlugin {
         this.scriptEngine = new ScriptEngineManager().getEngineByName("nashorn"); // Can use 'nashorn' or 'JavaScript'; either work.
 
         if (!scriptDirectory.exists()) {
-            scriptDirectory.mkdir();
-            this.log(Level.INFO, "Successfully created the \'" + scriptDirectory.getName() + "\' directory!");
+            if (scriptDirectory.mkdir()) {
+                this.log(Level.INFO, "Successfully created the \'" + scriptDirectory.getName() + "\' directory!");
+            } else {
+                this.log(Level.SEVERE, "Could not make the \'" + scriptDirectory.getName() + "\' directory.");
+            }
         }
 
         this.getCommandManager().register(new MainCommand(this));
@@ -65,7 +68,7 @@ public class FaucetJS extends JavaPlugin {
     }
 
     public void log(Level lvl, String... messages) {
-        Arrays.stream(messages).forEachOrdered(msg -> this.getLogger().log(lvl, msg));
+        Arrays.stream(messages).forEachOrdered(msg -> this.getLogger().log(lvl, "[FaucetJS] " + msg));
     }
 
     public static FaucetJS get() {
