@@ -26,7 +26,7 @@ public class ScriptLoaderTest {
     @Test
     public void invokeMethodTest() {
         int expected = 10;
-        int actual = GenericUtils.cast(this.script.execute("test", 5, 5));
+        int actual = GenericUtils.cast(this.script.execute("testFunc", 5, 5));
         assertEquals(expected, actual);
     }
 

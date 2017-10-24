@@ -1,3 +1,3 @@
-function test(numerator, denominator) {
+function testFunc(numerator, denominator) {
     return numerator + denominator;
 }
