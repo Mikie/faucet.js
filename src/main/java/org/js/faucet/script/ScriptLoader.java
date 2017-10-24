@@ -47,7 +47,7 @@ public class ScriptLoader implements Runnable, AutoCloseable {
             }
         }
 
-        this.instance.log(Level.INFO, "Loaded " + String.valueOf(this.scripts.size()) + " scripts in " + TimeUtil.millisecondsToTimeUnits(TimeUnit.SECONDS, start, false) + ".");
+        this.instance.log(Level.INFO, "Loaded " + String.valueOf(this.scripts.size()) + " scripts in " + TimeUtil.millisecondsToTimeUnits(TimeUnit.SECONDS, (start - System.currentTimeMillis()), false) + ".");
     }
 
     /**
@@ -95,6 +95,6 @@ public class ScriptLoader implements Runnable, AutoCloseable {
         }
 
         this.scripts.clear();
-        this.instance.log(Level.INFO, "Unloaded " + String.valueOf(amount) + " scripts in " + TimeUtil.millisecondsToTimeUnits(TimeUnit.SECONDS, start, false) + ".");
+        this.instance.log(Level.INFO, "Unloaded " + String.valueOf(amount) + " scripts in " + TimeUtil.millisecondsToTimeUnits(TimeUnit.SECONDS, (start - System.currentTimeMillis()), false) + ".");
     }
 }
