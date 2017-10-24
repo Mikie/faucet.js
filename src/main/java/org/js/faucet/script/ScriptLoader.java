@@ -39,7 +39,7 @@ public class ScriptLoader implements Runnable, AutoCloseable {
 
         if (this.directory.listFiles() != null) {
             for (File fileScript : this.directory.listFiles()) {
-                if (!FaucetUtils.getFileExtention(fileScript).equals(".js")) {
+                if (!FaucetUtils.getFileExtension(fileScript).equals(".js")) {
                     continue;
                 }
 
@@ -96,5 +96,22 @@ public class ScriptLoader implements Runnable, AutoCloseable {
 
         this.scripts.clear();
         this.instance.log(Level.INFO, "Unloaded " + String.valueOf(amount) + " scripts in " + TimeUtil.millisecondsToTimeUnits(TimeUnit.SECONDS, (start - System.currentTimeMillis()), false) + ".");
+    }
+
+    /**
+     * Gets the instance of the script corresponding to the name.
+     * @param name - name of the script.
+     * @return the script if found, else null.
+     */
+    public Script get(String name) {
+        for (Script s : this.scripts) {
+            if (!s.getName().equalsIgnoreCase(name)) {
+                continue;
+            }
+
+            return s;
+        }
+
+        return null;
     }
 }

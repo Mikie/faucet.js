@@ -14,7 +14,7 @@ public final class FaucetUtils {
         return Bukkit.getServer().getClass().getPackage().getName().substring(Bukkit.getServer().getClass().getPackage().getName().lastIndexOf('.') + 1);
     }
 
-    public static String getFileExtention(File file) {
+    public static String getFileExtension(File file) {
         return file.getName().split(".")[1];
     }
 }
