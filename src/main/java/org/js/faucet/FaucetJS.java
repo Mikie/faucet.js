@@ -6,6 +6,7 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.js.faucet.command.MainCommand;
 import org.js.faucet.command.wrapper.CommandManager;
+import org.js.faucet.exception.TryUtils;
 import org.js.faucet.locale.Locale;
 import org.js.faucet.script.ScriptLoader;
 
@@ -44,7 +45,7 @@ public class FaucetJS extends JavaPlugin {
         this.metrics = new Metrics(this); // Still need to check if this is working or not. If not I'll find my own way.
         this.scriptEngine = new ScriptEngineManager().getEngineByName("nashorn"); // Can use 'nashorn' or 'JavaScript'; either work.
         this.loader = new ScriptLoader();
-
+        this.loader.run();
         this.getCommandManager().register(new MainCommand(this));
     }
 
@@ -57,6 +58,8 @@ public class FaucetJS extends JavaPlugin {
         if (scriptEngine != null) {
             scriptEngine = null;
         }
+
+        TryUtils.run(this.loader::close);
     }
 
     public void log(Level lvl, String... messages) {
