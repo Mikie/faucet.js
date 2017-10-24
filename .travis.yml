@@ -1,9 +1,11 @@
 language: java
+install: maven
 
 jdk:
   - oraclejdk8
 
 before_install:
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
   - git config --global user.email "travis-ci@travis-ci.org"
   - git config --global user.name "Travis CI"
 
