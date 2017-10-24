@@ -1,23 +1,22 @@
 package org.js.faucet;
 
-import org.bstats.bukkit.Metrics;
 import lombok.Getter;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import org.js.faucet.command.MainCommand;
 import org.js.faucet.command.wrapper.CommandManager;
 import org.js.faucet.locale.Locale;
+import org.js.faucet.script.ScriptLoader;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
-import java.io.File;
 import java.util.Arrays;
 import java.util.logging.Level;
 
 public class FaucetJS extends JavaPlugin {
     @Getter
-    private File scriptDirectory = new File(getDataFolder(), "scripts");
+    private ScriptLoader loader;
 
     @Getter
     private ScriptEngine scriptEngine;
@@ -44,14 +43,7 @@ public class FaucetJS extends JavaPlugin {
     public void onEnable() {
         this.metrics = new Metrics(this); // Still need to check if this is working or not. If not I'll find my own way.
         this.scriptEngine = new ScriptEngineManager().getEngineByName("nashorn"); // Can use 'nashorn' or 'JavaScript'; either work.
-
-        if (!scriptDirectory.exists()) {
-            if (scriptDirectory.mkdir()) {
-                this.log(Level.INFO, "Successfully created the \'" + scriptDirectory.getName() + "\' directory!");
-            } else {
-                this.log(Level.SEVERE, "Could not make the \'" + scriptDirectory.getName() + "\' directory.");
-            }
-        }
+        this.loader = new ScriptLoader();
 
         this.getCommandManager().register(new MainCommand(this));
     }
